@@ -1,0 +1,320 @@
+/* The ugliest CSS possible */
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes rainbowText {
+  0% { color: red; }
+  14% { color: orange; }
+  28% { color: yellow; }
+  42% { color: lime; }
+  57% { color: cyan; }
+  71% { color: blue; }
+  85% { color: magenta; }
+  100% { color: red; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes zoomInOut {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+}
+
+body {
+  margin: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    #ff00ff,
+    #ff00ff 10px,
+    #00ff00 10px,
+    #00ff00 20px
+  );
+  font-family: "Comic Sans MS", cursive;
+  cursor: url('https://cur.cursors-4u.net/others/oth-8/oth704.cur'), auto;
+  overflow-x: hidden;
+}
+
+#app {
+  max-width: 100%;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 5em;
+  font-family: "Papyrus", fantasy;
+  color: yellow;
+  text-shadow: 
+    -3px -3px 0 blue,
+    3px -3px 0 red,
+    -3px 3px 0 green,
+    3px 3px 0 purple;
+  animation: spin 5s linear infinite, rainbowText 3s linear infinite;
+  margin: 10px;
+  transform: skew(-15deg, 10deg);
+}
+
+.logo {
+  height: 12em;
+  padding: 1.5em;
+  will-change: filter;
+  animation: zoomInOut 2s infinite;
+  border: 10px dotted yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 10px #ff00ff;
+}
+
+.logo:nth-child(odd) {
+  animation: spin 3s linear infinite;
+}
+
+.logo:nth-child(even) {
+  animation: float 4s ease-in-out infinite;
+}
+
+.card {
+  padding: 2em;
+  background-color: rgba(0, 255, 255, 0.5);
+  border: 5px dashed orange;
+  transform: rotate(-3deg);
+  position: relative;
+  z-index: 1;
+  margin: 20px;
+}
+
+.read-the-docs {
+  color: #ffff00;
+  font-family: "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: bold;
+  animation: blink 0.5s infinite;
+  background-color: #0000ff;
+  padding: 15px;
+  transform: rotate(5deg);
+  margin-top: 30px;
+  letter-spacing: 5px;
+}
+
+button {
+  border-radius: 0;
+  border: 3px solid red;
+  padding: 1em 2em;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: "Impact", sans-serif;
+  background-color: #00ff00;
+  color: purple;
+  cursor: pointer;
+  animation: shake 0.5s infinite;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
+  margin: 10px;
+}
+
+button:hover {
+  background-color: red;
+  color: #00ff00;
+  border-color: blue;
+  transform: scale(1.2) rotate(10deg);
+}
+
+a {
+  font-weight: 900;
+  font-size: 1.5em;
+  color: white;
+  background-color: black;
+  text-decoration: underline wavy red;
+  padding: 5px;
+  display: inline-block;
+  transform: rotate(-5deg);
+  margin: 5px;
+}
+
+a:hover {
+  color: lime;
+  background-color: purple;
+  transform: rotate(5deg) scale(1.2);
+}
+
+#cursor-trail {
+  position: absolute;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-trail-item {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.marquee {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-top: 5px dotted cyan;
+  border-bottom: 5px dotted magenta;
+  background-color: #ffff00;
+  padding: 10px 0;
+  margin: 20px 0;
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+  font-family: "Courier New", monospace;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff00ff;
+}
+
+@keyframes marquee {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+.popup {
+  position: fixed;
+  display: none;
+  padding: 20px;
+  border: 10px ridge gold;
+  background-color: lime;
+  color: blue;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 24px;
+  z-index: 1000;
+  box-shadow: 0 0 50px red;
+  transform: rotate(-5deg);
+}
+
+.popup-close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 30px;
+  cursor: pointer;
+  color: red;
+}
+
+.random-element {
+  position: absolute;
+  font-size: 30px;
+  animation: float 3s infinite;
+  z-index: 10;
+}
+
+#visitor-counter {
+  font-family: "Digital", fantasy;
+  font-size: 40px;
+  color: lime;
+  background-color: black;
+  border: 5px double white;
+  padding: 10px;
+  margin: 20px auto;
+  width: fit-content;
+  transform: skew(10deg);
+  text-shadow: 0 0 10px lime;
+}
+
+.glitter {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.text-effect {
+  font-family: "Arial Black", sans-serif;
+  display: inline-block;
+  margin: 10px;
+  font-size: 2em;
+}
+
+/* Color changing background sections */
+.color-section {
+  padding: 20px;
+  margin: 15px 0;
+  animation: rainbowText 2s linear infinite;
+  border: 10px groove purple;
+}
+
+.tilted-box {
+  transform: rotate(10deg);
+  background-color: rgba(255, 0, 255, 0.5);
+  padding: 20px;
+  margin: 30px;
+  border: 5px solid yellow;
+}
+
+.snow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9;
+}
+
+footer {
+  background-color: #00ff00;
+  color: #ff00ff;
+  font-family: "Wingdings", fantasy;
+  padding: 20px;
+  margin-top: 50px;
+  border-top: 10px zigzag purple;
+  transform: rotate(2deg);
+}
+
+/* Media query for even worse mobile experience */
+@media (max-width: 768px) {
+  body {
+    background: repeating-radial-gradient(
+      circle,
+      #ff00ff,
+      #ff00ff 10px,
+      #00ff00 10px,
+      #00ff00 20px
+    );
+  }
+  
+  h1 {
+    font-size: 3em;
+    transform: skew(-25deg, 15deg);
+  }
+  
+  .card {
+    transform: rotate(-8deg);
+  }
+}

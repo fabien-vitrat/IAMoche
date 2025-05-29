@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🤮 The Ugliest Website in the World 🤮</title>
+    <!-- Add multiple conflicting Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Henny+Penny&family=Nosifer&family=Rancho&family=VT323&display=swap" rel="stylesheet">
+    <!-- Add blinking favicon -->
+    <style>
+      @keyframes favicon-blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      link[rel="icon"] {
+        animation: favicon-blink 0.5s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Ugly background music will be loaded via JS -->
+    
+    <!-- Preload some ugly fonts -->
+    <div style="font-family: 'Comic Neue', cursive; position: absolute; opacity: 0;">Font preload</div>
+    <div style="font-family: 'Henny Penny', cursive; position: absolute; opacity: 0;">Font preload</div>
+    <div style="font-family: 'Nosifer', cursive; position: absolute; opacity: 0;">Font preload</div>
+    <div style="font-family: 'Rancho', cursive; position: absolute; opacity: 0;">Font preload</div>
+    <div style="font-family: 'VT323', monospace; position: absolute; opacity: 0;">Font preload</div>
+    
+    <!-- Ugly blinking text at the top -->
+    <div style="background-color: red; color: lime; text-align: center; padding: 10px; font-weight: bold; animation: blink 0.5s infinite;">
+      ⚠️ THIS WEBSITE IS UNDER CONSTRUCTION FOREVER ⚠️
+    </div>
+    
+    <!-- Main app container -->
+    <div id="app"></div>
+    
+    <!-- Script tags -->
+    <script type="module" src="main.js"></script>
+    
+    <!-- Extra useless HTML that makes the page uglier -->
+    <marquee direction="right" style="background-color: blue; color: yellow; margin-top: 20px;">
+      Thanks for visiting! Don't forget to sign our guestbook! Best viewed in Netscape Navigator!
+    </marquee>
+    
+    <!-- Hidden hit counter -->
+    <div style="position: fixed; bottom: 10px; right: 10px; font-size: 10px; background-color: black; color: green; padding: 5px; font-family: monospace;">
+      HIT COUNTER: 12345
+    </div>
+  </body>
+</html>
